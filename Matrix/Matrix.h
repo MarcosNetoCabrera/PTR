@@ -17,4 +17,5 @@ Matrix matrix_sum_scalar(Matrix matrix, double scalar);
 Matrix matrix_sub_scalar(Matrix matrix, double scalar);
 Matrix matrix_transpose(Matrix matrix);
 Matrix matrix_mult_scalar(Matrix matrix, double scalar);
+Matrix matrix_mult(Matrix matrix_A, Matrix matrix_B);
 void matrix_print(Matrix matrix);

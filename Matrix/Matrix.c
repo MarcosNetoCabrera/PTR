@@ -135,6 +135,24 @@ Matrix matrix_sub(Matrix matrix_1,Matrix matrix_2){
         return matrix_result;
     }
 }
+Matrix matrix_mult(Matrix matrix_A, Matrix matrix_B){
+    if(matrix_A.lines == matrix_B.columns){
+        Matrix matrix_result = matrix_constructor(matrix_A.lines,matrix_B.columns);
+        for (int i = 0; i < matrix_A.lines; i++) {
+            for(int j=0;j < matrix_B.columns; j++){
+                int soma = 0;
+                for (int k = 0; k < matrix_A.lines ; k++) {
+                    soma += matrix_A.values[i*matrix_A.lines + k] * matrix_B.values[k*matrix_B.columns + j];
+                }
+                matrix_result.values[i*matrix_A.columns+j] = soma;
+            }
+        }
+        return matrix_result;
+    }else{
+        printf("O numero de linhas da matriz A deve ser igual ao número da matriz B");
+        return matrix_zeros(matrix_A.lines,matrix_B.columns);
+    }
+}
 
 void matrix_print(Matrix matrix){
     if(matrix.values != NULL){
