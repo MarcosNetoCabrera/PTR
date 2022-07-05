@@ -11,7 +11,7 @@ Matrix matrix_constructor(unsigned int lines, unsigned int columns){
     matrix.columns = columns;
     matrix.lines = lines;
     matrix.values = malloc(lines*columns*sizeof (double));
-
+    matrix.values = NULL;
     return matrix;
 }
 
@@ -60,7 +60,6 @@ Matrix matrix_sum(Matrix matrix_1,Matrix matrix_2){
         return matrix_result;
     }else{
         Matrix matrix_result = matrix_constructor(0,0);
-        matrix_result.values = NULL;
         printf("ERRO: As matrizes passadas possuem dimensioes distintas\n");
         return matrix_result;
     }
@@ -77,7 +76,6 @@ Matrix matrix_sub(Matrix matrix_1,Matrix matrix_2){
         return matrix_result;
     }else{
         Matrix matrix_result = matrix_constructor(0,0);
-        matrix_result.values = NULL;
         printf("ERRO: As matrizes passadas possuem dimensioes distintas\n");
         return matrix_result;
     }
