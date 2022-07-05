@@ -64,6 +64,47 @@ Matrix matrix_sum(Matrix matrix_1,Matrix matrix_2){
         return matrix_result;
     }
 }
+
+Matrix matrix_sum_scalar(Matrix matrix, double scalar){
+    Matrix new_matrix = matrix_constructor(matrix.lines,matrix.columns);
+    if(matrix.values != NULL){
+        for(int i  = 0; i < matrix.lines*matrix.columns; i++){
+            new_matrix.values[i] = matrix.values[i] + scalar;
+        }
+        return new_matrix;
+    }else{
+        new_matrix.values = NULL;
+        return new_matrix;
+    }
+}
+
+Matrix matrix_sub_scalar(Matrix matrix, double scalar){
+    Matrix new_matrix = matrix_constructor(matrix.lines,matrix.columns);
+    if(matrix.values != NULL){
+        for(int i  = 0; i < matrix.lines*matrix.columns; i++){
+            new_matrix.values[i] = matrix.values[i] - scalar;
+        }
+        return new_matrix;
+    }else{
+        new_matrix.values = NULL;
+        return new_matrix;
+    }
+}
+
+Matrix matrix_mult_scalar(Matrix matrix, double scalar){
+    Matrix new_matrix = matrix_constructor(matrix.lines,matrix.columns);
+    if(matrix.values != NULL){
+        for(int i  = 0; i < matrix.lines*matrix.columns; i++){
+            new_matrix.values[i] = matrix.values[i] * scalar;
+        }
+        return new_matrix;
+    }else{
+        new_matrix.values = NULL;
+        return new_matrix;
+    }
+}
+
+
 Matrix matrix_sub(Matrix matrix_1,Matrix matrix_2){
 
     if(matrix_1.columns == matrix_2.columns && matrix_1.lines == matrix_2.lines){
