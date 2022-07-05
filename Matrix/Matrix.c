@@ -103,7 +103,20 @@ Matrix matrix_mult_scalar(Matrix matrix, double scalar){
         return new_matrix;
     }
 }
-
+Matrix matrix_transpose(Matrix matrix){
+    Matrix matrix_trp = matrix_constructor(matrix.columns,matrix.lines);
+    if(matrix.values != NULL){
+        for(int i = 0; i < matrix.lines; i++){
+            for(int j = 0; j < matrix.columns; j++){
+                matrix_trp.values[j*matrix.lines+i] = matrix.values[i*matrix.columns+j];
+            }
+        }
+        return matrix_trp;
+    }else{
+        matrix_trp.values = NULL;
+        return matrix_trp;
+    }
+}
 
 Matrix matrix_sub(Matrix matrix_1,Matrix matrix_2){
 
