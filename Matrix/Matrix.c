@@ -138,6 +138,7 @@ Matrix matrix_sub(Matrix matrix_1,Matrix matrix_2){
 
 void matrix_print(Matrix matrix){
     if(matrix.values != NULL){
+        printf("Matrix : (%d,%d)  \n",matrix.lines,matrix.columns);
         for(int i  = 0; i < matrix.lines; i++){
             printf("[ ");
             for(int j = 0; j < matrix.columns; j++){
