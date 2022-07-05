@@ -1,3 +1,0 @@
-C:/Users/vinic/Desktop/faculdade/arquitetura de sistemas digitais/sprint 2/PTR/Matrix/cmake-build-debug/CMakeFiles/Matrix.dir
-C:/Users/vinic/Desktop/faculdade/arquitetura de sistemas digitais/sprint 2/PTR/Matrix/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/vinic/Desktop/faculdade/arquitetura de sistemas digitais/sprint 2/PTR/Matrix/cmake-build-debug/CMakeFiles/rebuild_cache.dir
