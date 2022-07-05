@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/vinic/Desktop/faculdade/programação em tempo real/laboratório 1/Matrix
+# Install script for directory: C:/Users/vinic/Desktop/faculdade/arquitetura de sistemas digitais/sprint 2/PTR/Matrix
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/vinic/Desktop/faculdade/programação em tempo real/laboratório 1/Matrix/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/vinic/Desktop/faculdade/arquitetura de sistemas digitais/sprint 2/PTR/Matrix/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

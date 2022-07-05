@@ -8,7 +8,7 @@ int main() {
     //matrix_print(matrix);
     //matrix_print(matrix2);
     matrix_print(matrix_result);
-
+    matrix_print(matrix_result);
     return 0;
 
 }
