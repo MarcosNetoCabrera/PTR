@@ -9,6 +9,7 @@ int main() {
     //matrix_print(matrix);
     //matrix_print(matrix2);
     matrix_print(matrix3);
+    printf("Hello mundo");
 
     return 0;
 
