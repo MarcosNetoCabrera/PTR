@@ -6,7 +6,7 @@ struct  Matrix{
     unsigned int columns;
     double *values;
 };
-
+//Matrix matrix_null;
 Matrix matrix_constructor(unsigned int lines, unsigned int columns);
 Matrix matrix_zeros(unsigned int lines, unsigned int columns);
 Matrix matrix_ones(unsigned int lines, unsigned int columns);
@@ -18,4 +18,5 @@ Matrix matrix_sub_scalar(Matrix matrix, double scalar);
 Matrix matrix_transpose(Matrix matrix);
 Matrix matrix_mult_scalar(Matrix matrix, double scalar);
 Matrix matrix_mult(Matrix matrix_A, Matrix matrix_B);
+void matrix_free(Matrix *m);
 void matrix_print(Matrix matrix);

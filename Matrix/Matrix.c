@@ -5,6 +5,7 @@
 #include "stdlib.h"
 #include "Matrix.h"
 
+Matrix matrix_null = {.lines=0, .columns=0, .values=NULL};
 
 Matrix matrix_constructor(unsigned int lines, unsigned int columns){
     Matrix  matrix;
@@ -48,7 +49,6 @@ Matrix matrix_identify(unsigned int lines, unsigned int columns){
     return  matrix;
 }
 Matrix matrix_sum(Matrix matrix_1,Matrix matrix_2){
-
     if(matrix_1.columns == matrix_2.columns && matrix_1.lines == matrix_2.lines){
         Matrix matrix_result = matrix_constructor(matrix_1.lines,matrix_1.columns);
         for(int i = 0; i < matrix_1.lines;i++){
@@ -135,10 +135,11 @@ Matrix matrix_sub(Matrix matrix_1,Matrix matrix_2){
         return matrix_result;
     }
 }
+
 Matrix matrix_mult(Matrix matrix_A, Matrix matrix_B){
     if(matrix_A.lines == matrix_B.columns){
         Matrix matrix_result = matrix_constructor(matrix_A.lines,matrix_B.columns);
-        for (int i = 0; i < matrix_A.lines; i++) {
+        for (int i = 0; i < matrix_A.lines; i++){
             for(int j=0;j < matrix_B.columns; j++){
                 int soma = 0;
                 for (int k = 0; k < matrix_A.lines ; k++) {
@@ -149,7 +150,7 @@ Matrix matrix_mult(Matrix matrix_A, Matrix matrix_B){
         }
         return matrix_result;
     }else{
-        printf("O numero de linhas da matriz A deve ser igual ao número da matriz B");
+        printf("ERRO: O numero de linhas da matriz A deve ser igual ao número da matriz B");
         return matrix_zeros(matrix_A.lines,matrix_B.columns);
     }
 }
@@ -165,7 +166,14 @@ void matrix_print(Matrix matrix){
             printf("]\n");
         }
     }else{
-        printf("Matriz sem valores top essa aq\n");
+        printf("Matriz sem valores top essa aq kkkk\n");
     };
+}
+
+void matrix_free(Matrix *m){
+    if(m) {
+        free(m->values);
+        *m = matrix_null;
+    }
 }
 
