@@ -150,7 +150,7 @@ Matrix matrix_mult(Matrix matrix_A, Matrix matrix_B){
         }
         return matrix_result;
     }else{
-        printf("ERRO: O numero de linhas da matriz A deve ser igual ao número da matriz B");
+        printf("ERRO: O numero de colunas da matriz A deve ser igual ao número de linhas da matriz B");
         return matrix_null;
     }
 }
