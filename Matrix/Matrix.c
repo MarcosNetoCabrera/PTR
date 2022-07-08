@@ -49,8 +49,8 @@ Matrix matrix_identify(unsigned int lines, unsigned int columns){
     return  matrix;
 }
 Matrix matrix_sum(Matrix matrix_1,Matrix matrix_2){
-    if(matrix_1.columns == matrix_2.columns && matrix_1.lines == matrix_2.lines){
         Matrix matrix_result = matrix_constructor(matrix_1.lines,matrix_1.columns);
+    if(matrix_1.columns == matrix_2.columns && matrix_1.lines == matrix_2.lines){
         for(int i = 0; i < matrix_1.lines;i++){
             for(int j = 0; j < matrix_1.columns; j++){
                 matrix_result.values[i*matrix_1.columns+j] = matrix_1.values[i*matrix_1.columns+j] + matrix_2.values[i*matrix_1.columns+j];
@@ -137,7 +137,7 @@ Matrix matrix_sub(Matrix matrix_1,Matrix matrix_2){
 }
 
 Matrix matrix_mult(Matrix matrix_A, Matrix matrix_B){
-    if(matrix_A.lines == matrix_B.columns){
+    if(matrix_A.columns == matrix_B.lines){
         Matrix matrix_result = matrix_constructor(matrix_A.lines,matrix_B.columns);
         for (int i = 0; i < matrix_A.lines; i++){
             for(int j=0;j < matrix_B.columns; j++){
@@ -151,7 +151,7 @@ Matrix matrix_mult(Matrix matrix_A, Matrix matrix_B){
         return matrix_result;
     }else{
         printf("ERRO: O numero de linhas da matriz A deve ser igual ao número da matriz B");
-        return matrix_zeros(matrix_A.lines,matrix_B.columns);
+        return matrix_null;
     }
 }
 
