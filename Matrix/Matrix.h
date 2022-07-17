@@ -8,7 +8,7 @@ struct  Matrix{
 };
 //Matrix matrix_null;
 Matrix matrix_constructor(unsigned int lines, unsigned int columns);
-Matrix matrix_radom(unsigned int lines, unsigned int columns);
+Matrix matrix_random(unsigned int lines, unsigned int columns);
 Matrix matrix_zeros(unsigned int lines, unsigned int columns);
 Matrix matrix_ones(unsigned int lines, unsigned int columns);
 Matrix matrix_identify(unsigned int lines, unsigned int columns);
@@ -24,3 +24,4 @@ Matrix matrix_mult(Matrix matrix_A, Matrix matrix_B);
 double matrix_det(Matrix matrix);
 void matrix_free(Matrix *m);
 void matrix_print(Matrix matrix);
+Matrix matrix_create(int lines, int columns, double values[][columns], int len);

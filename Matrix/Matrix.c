@@ -27,7 +27,7 @@ Matrix matrix_zeros(unsigned int lines, unsigned int columns){
     return matrix;
 }
 
-Matrix matrix_radom(unsigned int lines, unsigned int columns){
+Matrix matrix_random(unsigned int lines, unsigned int columns){
     Matrix matrix = matrix_constructor(lines,columns);
     for(int i = 0; i < lines; i++){
         for(int j = 0; j < columns; j++){
@@ -178,7 +178,7 @@ void matrix_print(Matrix matrix){
             printf("]\n");
         }
     }else{
-        printf("Matriz sem valores top essa aq kkkk\n");
+        printf("Matriz sem valores\n");
     };
 }
 int find_index_0(Matrix m){
@@ -282,6 +282,24 @@ Matrix matrix_inverse(Matrix matrix){
     return identidade;
 }
 
+Matrix matrix_create(int lines, int columns, double values[][columns], int len){
+
+
+    if(len == lines*columns){
+
+        Matrix  matrix_new = matrix_constructor(lines,columns);
+        for(int i = 0; i < lines; i++){
+            for(int j = 0; j <columns; j++){
+                VALUES(matrix_new,i,j) = values[i][j];
+            }
+        }
+        return matrix_new;
+    }else{
+        printf("ERRO: dimensionalidade da matrix a ser criada nao confere com a quantidade de elementos a ser inserido\n");
+        return matrix_null;
+    }
+
+}
 
 void matrix_free(Matrix *m){
     if(m) {
