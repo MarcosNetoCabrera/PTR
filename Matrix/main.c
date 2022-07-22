@@ -1,38 +1,17 @@
 #include <stdio.h>
-#include "Matrix.h"
+#include "Integral.h"
+
+#define delta 0.0001
+
+double exponecial3(double input){
+    return input*input*input;
+}
 
 int main() {
-    /*
-    Matrix  matrix = matrix_random(6,6);
-
-    //Matrix  matrix2 = matrix_radom(3,3);
-
-    //matrix_print(matrix2);
-    //Matrix matrix3 = matrix_mult(matrix,matrix2);
-
-    matrix_print(matrix);
-
-    Matrix m = matrix_inverse(matrix);
-    matrix_print(m);
-
-    //double res = matrix_det(matrix);
-    //printf("\ndet: %0.1f",res);
-
-
-    //matrix_print(matrix2);
-    //matrix_print(matrix3);
-
-    matrix_free(&matrix);
-    //matrix_free(&matrix2);
-    //matrix_free(&matrix2);
-    */
-
-    double values[2][3] = {{1.2,2.3, 5.3},{3.1,5.3,1.1}};
-    int lines = 2;
-    int columns = 3;
-    int len = (sizeof (values)/sizeof (double ));
-
-    Matrix  matrix = matrix_create(lines,columns,values,len);
-    matrix_print(matrix);
+    printf("Hello, World!\n");
+    double result = integral_trapezio(delta,0,4, exponecial3);
+    double result2 = integral_simpson(delta,0,4,exponecial3);
+    printf("Resultado Regra do Trapezio: %f\n",result);
+    printf("Resultado Regra do Simpson: %f\n",result2);
     return 0;
 }
